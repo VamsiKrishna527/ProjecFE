@@ -30,10 +30,10 @@ export class DirectorComponent {
 }
 
 interface Director{
-  id: number;
-  directorName: string;
+  directorId: number;
+  name: string;
   age: number;
   nationality: string;
-  screenName: string;
+  movieslist: string;
 }
 
