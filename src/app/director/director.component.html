@@ -1,0 +1,25 @@
+<h2 id="tableLabel">List of Directors</h2>
+
+<p *ngIf="!directors.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="directors.length">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Nationality</th>
+      <th>Screen Name</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Director of directors">
+      <td>{{ Director.id }}</td>
+      <td>{{ Director.directorName }}</td>
+      <td>{{ Director.age }}</td>
+      <td>{{ Director.nationality }}</td>
+      <td>{{ Director.screenName }}</td>
+    </tr>
+  </tbody>
+</table>
