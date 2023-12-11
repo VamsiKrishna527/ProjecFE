@@ -1,0 +1,15 @@
+<p>movies works!</p>
+<div>
+    <label for="directorSelect">Select Director:</label>
+    <select id="directorSelect" [(ngModel)]="selectedDirectorName" (change)="onDirectorSelected()">
+        <option *ngFor="let director of directors" [value]="director.name">{{ director.name }}</option>
+      </select>
+  </div>
+  
+  <div *ngIf="selectedDirector">
+    <h2>{{ selectedDirector.name }}</h2>
+    <!-- <p>Age: {{ selectedDirector.age }}</p> -->
+    <!-- <p>Nationality: {{ selectedDirector.nationality }}</p> -->
+    <p>Movies List: {{ selectedDirector.movieslist }}</p>
+    
+  </div>

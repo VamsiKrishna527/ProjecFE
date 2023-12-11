@@ -32,8 +32,6 @@ export class DirectorComponent {
 interface Director{
   directorId: number;
   name: string;
-  age: number;
-  nationality: string;
   movieslist: string;
 }
 
