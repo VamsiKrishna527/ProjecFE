@@ -12,6 +12,7 @@ export class MoviesComponent {
   directors: Director[] = [];
   selectedDirectorName: string | null = null;
   selectedDirector: Director | null = null;
+  movies : Movie[]=[];
 
   constructor(private http: HttpClient) {
     this.loadDirectors();
@@ -32,19 +33,17 @@ export class MoviesComponent {
     this.selectedDirector = this.directors.find(director => director.name === this.selectedDirectorName) || null;
 
     if (this.selectedDirector) {
-      this.loadMoviesForDirector(this.selectedDirector.directorId);
+      this.http.get<Director>(`${this.baseUrl}/api/Director/GetDirectorwithMovies/${this.selectedDirector.directorId}`).subscribe({
+        next: result => {
+          this.selectedDirector = result;
+          this.movies = result.movies;
+          console.log('Director with Movies:', result);
+        },
+        error: error => {
+          console.error(error);
+        }
+      });
     }
-  }
-
-  loadMoviesForDirector(directorId: number) {
-    this.http.get<Movie[]>(`${this.baseUrl}/api/Director/${directorId}/movies`).subscribe({
-      next: result => {
-        console.log('Movies for director:', result);
-      },
-      error: error => {
-        console.error(error);
-      }
-    });
   }
 }
 
@@ -53,9 +52,17 @@ interface Director {
   name: string;
   age: number;
   nationality: string;
+  email:string;
+  movies : Movie[];
   movieslist: string;
 }
 
 interface Movie{
+  title: string;
+  description: string;
+  releaseDate: Date;
+  budget: number;
+  genre: string;
+  collections: number;
   
 }

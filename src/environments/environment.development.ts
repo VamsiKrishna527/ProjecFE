@@ -1,1 +1,1 @@
-baseUrl : 'https://localhost:7104/'
+baseUrl : 'https://localhost:7104'
