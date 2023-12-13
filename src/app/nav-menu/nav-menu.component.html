@@ -1,11 +1,8 @@
 <header>
-    <button mat-icon-button tabindex="0" [routerLink]="['/']">
-      Home
-    </button>
-
+    <a mat-flat-button color="primary" [routerLink]="['/']">Home</a>
     <a mat-flat-button color="primary" [routerLink]="['/director']">Directors</a>
     <a mat-flat-button color="primary" [routerLink]="['/movies']">Movies</a>
-
+    <a mat-flat-button color="primary" [routerLink]="['/modify']">Modify</a>
     <!-- <span class="separator"></span>
     <a mat-flat-button color="primary" *ngIf="!isLoggedIn" color="primary" [routerLink]="['/login']">Login</a>
     <a mat-flat-button color="primary" *ngIf="isLoggedIn" color="primary" (click)="onLogout()">Logout</a>  -->

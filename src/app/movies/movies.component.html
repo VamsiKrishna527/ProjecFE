@@ -1,47 +1,4 @@
 <p>movies works!</p>
-<!-- <div>
-    <label for="directorSelect">Select Director:</label>
-    <select id="directorSelect" [(ngModel)]="selectedDirectorName" (change)="onDirectorSelected()">
-        <option *ngFor="let director of directors" [value]="director.name">{{ director.name }}</option>
-      </select>
-  </div> -->
-  
-  <!-- <div *ngIf="selectedDirector">
-    <h2>{{ selectedDirector.name }}</h2>
-     <p>Age: {{ selectedDirector.age }}</p> -->
-    <!-- <p>Nationality: {{ selectedDirector.nationality }}</p> -->
-    <!-- <p>Movies List: {{ selectedDirector.movieslist }}</p> -->
-    
-    <!-- <table *ngIf="movies.length > 0">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Release Date</th>
-          <th>Budget</th>
-          <th>Genre</th>
-          <th>Collections</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let Movie of movies">
-          <td>{{ Movie.title }}</td>
-          <td>{{ Movie.description }}</td>
-          <td>{{ Movie.releaseDate | date }}</td>
-          <td>{{ Movie.budget | currency }}</td>
-          <td>{{ Movie.genre }}</td>
-          <td>{{ Movie.collections | currency }}</td>
-        </tr>
-      </tbody>
-    </table> -->
-    
-    <!-- Display a message if no movies are available -->
-    <!-- <div *ngIf="movies.length === 0">
-      No movies available for the selected director.
-    </div> -->
-
-  <!-- </div> --> 
-
   <div>
     <label for="directorSelect">Select Director:</label>
     <select id="directorSelect" [(ngModel)]="selectedDirectorName" (change)="onDirectorSelected()">

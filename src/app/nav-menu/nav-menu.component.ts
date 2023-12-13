@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 //import { AuthService } from '../login/auth.service';
 import { Subject, takeUntil } from 'rxjs';
 import {Router} from '@angular/router';
@@ -9,29 +9,34 @@ import {Router} from '@angular/router';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
-  
-  // isLoggedIn: boolean = false;
-  // private destroySubject = new Subject();
 
-  // constructor (private authService: AuthService, private router:Router){
-    
-  //   this.authService.authStatus.pipe(takeUntil(this.destroySubject))
-  //   .subscribe(result =>{
-      
-  //     this.isLoggedIn=result;
-  //   });
-  // }
+//   isLoggedIn: boolean = false;
+//   private destroySubject = new Subject();
 
-  // ngOnDestroy():void{
-  //   this.destroySubject.next(true);
-  //   this.destroySubject.complete();
-  //}
+//   constructor(private authService: AuthService, private router: Router) {
+//     // this.isLoggedIn = authService.isAuthenicated();
+//     this.authService.authStatus.pipe(takeUntil(this.destroySubject))
+//     .subscribe(result => {
+//       // console.log(Is logged in changed to ${isLoggedIn})
+//       this.isLoggedIn = result;
+//     });
+//   }
 
-  // ngOnInit():void{
-  //   this.isLoggedIn = this.authService.isAuthenticated();
-  // }
-  // onLogout(){
-  //   this.authService.logout();
-  //   this.router.navigate([''])
-  // };
+//   ngOnDestroy(): void {
+//     this.destroySubject.next(true);
+//     this.destroySubject.complete();
+//   }
+
+//   ngOnInit(): void {
+//       this.isLoggedIn = this.authService.isAuthenicated();
+//   }
+
+//   onLogout() {
+
+//     console.log('User logged out');
+//     this.authService.logout();
+
+//     // this.isLoggedIn = false; 
+//   }
+
 }

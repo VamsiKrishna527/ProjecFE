@@ -1,0 +1,76 @@
+<p>modify works!</p>
+
+<div>
+  <label for="operation">Select Operation:</label>
+  <select id="operation" name="operation" [(ngModel)]="selectedOperation" (change)="onOperationChange()" required>
+    <option value="add">Add</option>
+    <option value="update">Update</option>
+    <option value="delete">Delete</option>
+  </select>
+</div>
+
+<div *ngIf="selectedOperation">
+  <label for="director">Select Director:</label>
+  <select id="director" name="director" [(ngModel)]="selectedDirector" (change)="onDirectorChange()" required>
+    <option *ngFor="let director of directors" [value]="director.directorId">{{ director.name }}</option>
+  </select>
+</div>
+
+<div *ngIf="selectedOperation === 'add'">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" [(ngModel)]="selectedMovieTitle" required>
+
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" [(ngModel)]="selectedMovieDescription" required>
+
+  <label for="releaseDate">Release Date:</label>
+  <input type="text" id="releaseDate" name="releaseDate" [(ngModel)]="selectedReleaseDate" required>
+
+  <label for="budget">Budget:</label>
+  <input type="number" id="budget" name="budget" [(ngModel)]="selectedBudget" required>
+
+  <label for="genre">Genre:</label>
+  <input type="text" id="genre" name="genre" [(ngModel)]="selectedGenre" required>
+
+  <label for="collections">Collections:</label>
+  <input type="number" id="collections" name="collections" [(ngModel)]="selectedCollections" required>
+
+  <button (click)="addMovieToDirector()">Submit</button>
+</div>
+
+<div *ngIf="selectedOperation === 'update'">
+  <label for="movie">Select Movie:</label>
+  <select id="movie" name="movie" [(ngModel)]="selectedDirectorMovies" required>
+    <option *ngFor="let movie of selectedDirectorMovies" [value]="selectedDirectorMovies">{{ movie }}</option>
+  </select>
+
+  <div *ngIf="selectedDirectorMovies">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" [(ngModel)]="selectedMovieTitle" required>
+
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" [(ngModel)]="selectedMovieDescription" required>
+
+  <label for="releaseDate">Release Date:</label>
+  <input type="text" id="releaseDate" name="releaseDate" [(ngModel)]="selectedReleaseDate" required>
+
+  <label for="budget">Budget:</label>
+  <input type="number" id="budget" name="budget" [(ngModel)]="selectedBudget" required>
+
+  <label for="genre">Genre:</label>
+  <input type="text" id="genre" name="genre" [(ngModel)]="selectedGenre" required>
+
+  <label for="collections">Collections:</label>
+  <input type="number" id="collections" name="collections" [(ngModel)]="selectedCollections" required>
+
+  <button (click)="updateMovieofDirector()">Submit</button>
+  </div>
+</div>
+
+<div *ngIf="selectedOperation === 'delete'">
+  <label for="movie">Select Movie:</label>
+  <select id="movie" name="movie" [(ngModel)]="selectedMovieTitle" required>
+    <option *ngFor="let movie of selectedDirectorMovies" [value]="movie">{{ movie }}</option>
+  </select>
+  <button (click)="deleteMovieofDirector()">Delete</button>
+</div>
